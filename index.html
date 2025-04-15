@@ -4,73 +4,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-          }
-          
-          html, body {
-            width: 100%;
-            height: 100%;
-          }
-
-        header {
-            text-align: center;
-            background: #516271;
-            color: white;
-            width: 100%;
-          }
-
-          a {
-            color: white;
-          }
-          h1 {
-            font-size: 70px;
-          }
-
-          img {
-            margin: 40px 0px 0px 0px;
-          }
-          ul {
-            padding: 10px;
-            background: rgba(0,0,0,0.5);
-          }
-          li {
-            display: inline;
-            padding: 0px 30px 0px 30px;
-          }
-
-          body {
-            font-family: helvetica, sans-serif;
-          }
-
-          .about-me {
-            text-align: center;
-          }
-
-          .projects {
-            text-align: center;
-          }
-
-        .footer {
-            text-align: center;
-            background: #516271;
-            background-size: cover;
-            color: white;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .footer img {
-            height: 20px;
-            width: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -80,33 +14,31 @@
         <h3>Software Engineer</h3>
       </header>
 
-      <ul>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Resume</a></li>
-        <li><a href="#">Projects</a></li>
-      </ul>
-
-      <div class="about-me">
-        <p>I am an NYC-based software engineer specializing in Salesforce development. </p>
-        <br>
-        <br>
-        <h5>Technologies</h5><br>
-        <p></p>
-      </div>
-
-      <div class="resume">
-
-
-      </div>
-
-
-      <div class="projects">
-        <h3>Coming soon!</h3>
-      </div>
-
-      <div class="footer">
-        <p> grace.saint8@gmail.com</p>
-        <p><img src="https://i.imgur.com/orBDSWx.png" height="20px" width="15px"> New York City</p>
-        <p>Grace Saint © 2025</p>
+      <div class="container">
+        <aside class="sidebar">
+          <h2>Sidebar</h2>
+          <button onclick="changeSidebarColor()">Change Color</button>
+        </aside>
+        <main class="content">
+          <h1>Main Content</h1>
+          <p>This is the scrollable content area. Scroll down to see more content!</p>
+          
+          <div class="filler">
+            <div class="about-me">
+                <p>I am an NYC-based software engineer specializing in Salesforce development. </p>
+                <br>
+                <h5>Technologies</h5><br>
+                <p></p>
+              </div>
+        
+              <div class="resume">
+              </div>
+        
+        
+              <div class="projects">
+                <h3>Coming soon!</h3>
+              </div>
+          </div>
+        </main>
       </div>
 </body>
