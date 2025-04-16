@@ -12,10 +12,12 @@ body, html {
 
 h1 {
     font-family: 'Londrina Shadow', cursive;
+    font-size: 70px;
 }
 
 h2 {
-    font-size: 50px;
+    font-family: 'Londrina Shadow', cursive;
+    font-size: 45px;
 }
 
 .float-text {
