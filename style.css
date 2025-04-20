@@ -17,6 +17,9 @@
     justify-content: space-between;
     align-items: center;
   }
+  logo {
+    font-weight: bold;
+  }
   nav a {
     color: #fff;
     margin-left: 1rem;
