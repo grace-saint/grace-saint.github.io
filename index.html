@@ -23,14 +23,14 @@
         <img src="https://imgur.com/a/me-0PdE8Hg" alt="Graces Picture" />
         <div class="hero-text">
           <h1>Developer Portfolio</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
-          <button onclick="scrollToProjects()">View Projects</button>
+          <p>Experienced software developer with 6 years in the industry, delivering clean code, effective solutions, and consistent technical growth.</p>
+          <button onclick="downloadResume()">Download Resume</button>
         </div>
       </section>
       <section id="projects">
         <h2>Projects</h2>
         <div class="projects">
-          <div>Coming soon!</div>
+          <h3>Coming soon!</h3>
           <!-- <div></div>
           <div></div>
           <div></div> -->
@@ -39,21 +39,28 @@
       <section class="about-contact">
         <div class="about" id="about">
           <h2>About Me</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+          <p>I have been in the industry for 6 years, working on a range of projects that have strengthened both my technical and collaborative skills. I've worked for various companies in both consulting and in-house development roles.</p>
+          <p><strong>Languages and Skills:</strong> Java, Apex, JavaScript, HTML, CSS, Salesforce configuration</p>
+          <p><strong>Currently Learning:</strong> React, Python, Shopify development</p>
         </div>
         <div class="contact" id="contact">
           <h2>Contact</h2>
           <p>Email: grace.saint8@gmail.com.com</p>
-          <p>LinkedIn: https://www.linkedin.com/in/grace-saint-bb5297b7/</p>
-          <p>GitHub: https://github.com/grace-saint</p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/grace-saint-bb5297b7/">https://www.linkedin.com/in/grace-saint-bb5297b7/</a></p>
+          <p>GitHub: <a href="https://github.com/grace-saint">https://github.com/grace-saint</a></p>
         </div>
       </section>
       <footer>
         <p>&copy; 2025 Grace Saint. All rights reserved.</p>
       </footer>
       <script>
-        function scrollToProjects() {
-          document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+        function downloadResume() {
+            const link = document.createElement('a');
+            link.href = './GraceResume2025.pdf';
+            link.download = 'GraceResume2025.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
       </script>
 </body>
