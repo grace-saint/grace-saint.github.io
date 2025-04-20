@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: center;
     padding: 3rem 2rem;
-    text-align: right;
+    text-align: left;
   }
   .hero-text {
     max-width: 500px;
