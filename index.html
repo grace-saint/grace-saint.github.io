@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Grace Saint's Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
@@ -8,40 +11,49 @@
 </head>
 
 <body>
-    <div class="container">
-    <aside class="sidebar">
-        <img src="https://i.imgur.com/QFIufJB.png">
-        <div class="float-text">
-            <p>Grace Saint</p>
-            <p>Software Engineer</p>
-            <p>grace.saint8@gmail.com</p>
-            <p>New York City</p>
+    <header>
+        <div class="logo">LOGO</div>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+      <section class="hero">
+        <img src="#" alt="Developer image placeholder" />
+        <div class="hero-text">
+          <h1>Developer Portfolio</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+          <button onclick="scrollToProjects()">View Projects</button>
         </div>
-
-        <div class="resume">
-            <a href="GraceResume2025.pdf" download class="download-btn">Download Resume</a>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-    </aside>
-
-    <main class="content">
-        <h1>Grace Saint</h1>
-        <h2>Software Engineer</h2>
-        <p>I am an NYC-based software engineer specializing in Salesforce development.</p>
-        
-        <div class="filler">
-            <div class="about-me">
-                <h2>Tech Stack</h2><br>
-                <p></p>
-            </div>
-        
-            
-    
-    
-            <div class="projects">
-                <h2>Projects</h2>
-                <h3>Coming soon!</h3>
-            </div>
+      </section>
+      <section class="about-contact">
+        <div class="about" id="about">
+          <h2>About Me</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
         </div>
-    </main>
-    </div>
+        <div class="contact" id="contact">
+          <h2>Contact</h2>
+          <p>Email: you@example.com</p>
+          <p>LinkedIn: linkedin.com/in/yourprofile</p>
+          <p>GitHub: github.com/yourusername</p>
+        </div>
+      </section>
+      <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+      </footer>
+      <script>
+        function scrollToProjects() {
+          document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+        }
+      </script>
 </body>
