@@ -86,3 +86,13 @@
     background-color: #1e293b;
     color: #fff;
   }
+  @media (min-width: 768px) {
+    .hero {
+      flex-direction: row;
+      text-align: left;
+    }
+    .about-contact {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
