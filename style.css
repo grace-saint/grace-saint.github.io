@@ -89,14 +89,14 @@
   @media (min-width: 768px) {
     .hero {
       flex-direction: row;
-      text-align: left;
+      float: left;
     }
     .hero img {
       margin-bottom: 0;
       margin-right: 2rem;
     }
     .hero-text {
-      text-align: left;
+      float: left;
     }
     .about-contact {
       flex-direction: row;
