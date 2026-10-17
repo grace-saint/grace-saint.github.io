@@ -6,9 +6,8 @@
   --align: center;     /* how text lines up inside them */
   --gutter: 16px;
 }
-[data-theme="rust"] { --bg: #737249; --fg: #494A73; }
-[data-theme="rose"] { --bg: #16616B; --fg: #6B2016; }
-[data-theme="moss"] { --bg: #4f5a33; --fg: #dcd7aa; }
+[data-theme="rust"] { --bg: #494A73; --fg: #737249; }
+[data-theme="rose"] { --bg: #6B2016; --fg: #16616B; }
 [data-theme="sky"]  { --bg: #496473; --fg: #735849; }
 
 /* ---------- alignment (cycled by the ALIGN button) ---------- */

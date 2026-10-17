@@ -1,5 +1,5 @@
 const OPTIONS = {
-  theme: ['default', 'rust', 'rose', 'moss', 'sky'],
+  theme: ['default', 'rust', 'rose', 'sky'],
   align: ['center', 'left', 'right'],
 };
 
