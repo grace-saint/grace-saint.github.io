@@ -6,10 +6,10 @@
   --align: center;     /* how text lines up inside them */
   --gutter: 16px;
 }
-[data-theme="rust"] { --bg: #228a7e; --fg: #c52222; }
-[data-theme="rose"] { --bg: #ecccc6; --fg: #8c2f3a; }
+[data-theme="rust"] { --bg: #737249; --fg: #494A73; }
+[data-theme="rose"] { --bg: #16616B; --fg: #6B2016; }
 [data-theme="moss"] { --bg: #4f5a33; --fg: #dcd7aa; }
-[data-theme="sky"]  { --bg: #a3b8d2; --fg: #24324a; }
+[data-theme="sky"]  { --bg: #496473; --fg: #735849; }
 
 /* ---------- alignment (cycled by the ALIGN button) ---------- */
 [data-align="left"]  { --justify: flex-start; --align: left; }
