@@ -2,9 +2,9 @@
 /* Each theme is named after a fabric or dye. The swatches are built from
    OPTIONS.theme in script.js, so add a name there and a rule here to add one. */
 :root, [data-theme="muslin"] { --bg: #f3eee4; --fg: #1d1b18; }
-[data-theme="indigo"] { --bg: #494A73; --fg: #737249; }
-[data-theme="madder"] { --bg: #6B2016; --fg: #16616B; }
-[data-theme="tweed"]  { --bg: #735849; --fg: #496473; }
+[data-theme="indigo"] { --bg: #494A73; --fg: #C3C2A1; }
+[data-theme="madder"] { --bg: #6B2016; --fg: #29B5C7; }
+[data-theme="tweed"]  { --bg: #735849; --fg: #D0DBE1; }
 
 :root {
   --justify: center;   /* where blocks sit on the page */
