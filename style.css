@@ -6,7 +6,7 @@
   --align: center;     /* how text lines up inside them */
   --gutter: 16px;
 }
-[data-theme="rust"] { --bg: #8a3b22; --fg: #e8bd7f; }
+[data-theme="rust"] { --bg: #228a7e; --fg: #c52222; }
 [data-theme="rose"] { --bg: #ecccc6; --fg: #8c2f3a; }
 [data-theme="moss"] { --bg: #4f5a33; --fg: #dcd7aa; }
 [data-theme="sky"]  { --bg: #a3b8d2; --fg: #24324a; }
