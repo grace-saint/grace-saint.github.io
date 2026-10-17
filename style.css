@@ -20,6 +20,7 @@
 html, body { margin: 0; }
 body {
   min-height: 100vh;
+  min-height: 100dvh; /* matches the visible screen on phones */
   display: flex;
   flex-direction: column;
   background: var(--bg);
@@ -111,13 +112,21 @@ main {
 .contact { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: var(--justify); }
 
 /* ---------- footer: copyright + controls ---------- */
+/* sticky: stays pinned to the bottom of the screen while the page scrolls */
 footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 1rem;
   padding: 1rem var(--gutter) 1.5rem;
   font-size: .875rem;
+  background: var(--bg);
+  transition: background-color .3s;
 }
+footer p { margin: 0; }
 .controls { display: flex; gap: 1.25rem; }
 
 @media (max-width: 749px) {
