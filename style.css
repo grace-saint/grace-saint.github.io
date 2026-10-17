@@ -1,69 +1,126 @@
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
-  }
-  .logo {
-    font-weight: bold;
-  }
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 2rem;
-    text-align: left;
-  }
-  .hero-text {
-    max-width: 500px;
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  .hero p {
-    margin-bottom: 1rem;
-  }
-  .hero img {
-    width: 300px;
-    height: 300px;
-    background-color: #cbd5e1;
-    border-radius: 20px;
-  }
-  section {
-    padding: 2rem;
-  }
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  .projects div {
-    background-color: #e2e8f0;
-    height: 150px;
-  }
-  .about-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-between;
-  }
-  .about,
-  .contact {
-    flex: 1;
-    min-width: 250px;
-  }
-  footer {
-    color: #000;
-  }
-  @media (min-width: 768px) {
-    .hero {
-      flex-direction: row;
-      text-align: left;
-    }
-    .hero img {
-      margin-bottom: 0;
-      margin-right: 2rem;
-    }
-  }
+/* ---------- color themes (cycled by the COLOR button) ---------- */
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --justify: center;   /* where blocks sit on the page */
+  --align: center;     /* how text lines up inside them */
+  --gutter: 16px;
+}
+[data-theme="rust"] { --bg: #8a3b22; --fg: #e8bd7f; }
+[data-theme="rose"] { --bg: #ecccc6; --fg: #8c2f3a; }
+[data-theme="moss"] { --bg: #4f5a33; --fg: #dcd7aa; }
+[data-theme="sky"]  { --bg: #a3b8d2; --fg: #24324a; }
+
+/* ---------- alignment (cycled by the ALIGN button) ---------- */
+[data-align="left"]  { --justify: flex-start; --align: left; }
+[data-align="right"] { --justify: flex-end;   --align: right; }
+
+/* ---------- base ---------- */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: var(--align);
+  transition: background-color .3s, color .3s;
+}
+a { color: inherit; text-decoration: none; }
+a:hover, a[aria-current="page"] { text-decoration: underline; text-underline-offset: .15rem; }
+ul { list-style: none; margin: 0; padding: 0; }
+button {
+  font: inherit; color: inherit; background: none;
+  border: 0; padding: 0; cursor: pointer; text-transform: uppercase;
+}
+button:hover { text-decoration: underline; text-underline-offset: .15rem; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* The logo PNG is used as a mask so it takes on the current theme color. */
+.logo {
+  display: block;
+  aspect-ratio: 407 / 62;
+  background-color: var(--fg);
+  -webkit-mask: url("images/grace-saint.png") center / contain no-repeat;
+          mask: url("images/grace-saint.png") center / contain no-repeat;
+  -webkit-mask-position: var(--align) center;
+          mask-position: var(--align) center;
+  transition: background-color .3s;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: var(--justify);
+  padding: 2rem var(--gutter);
+}
+
+/* ---------- home: centered logo with a two-column menu ---------- */
+.home main { justify-content: center; }
+.home-wrapper { width: min(300px, 100%); }
+.home-wrapper .logo { width: 100%; margin-bottom: 2.5rem; }
+.home-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-auto-flow: column;
+  column-gap: 2rem;
+  font-size: 1.25rem;
+}
+
+/* ---------- inner pages: small logo + breadcrumb ---------- */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: var(--justify);
+  gap: .75rem;
+  padding: 1.5rem var(--gutter) 0;
+}
+.site-header .logo { width: 140px; }
+.breadcrumbs { display: flex; gap: .4rem; }
+
+/* ---------- work: three-column nested menu ---------- */
+.work main { align-items: stretch; }
+.portfolio-menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+.portfolio-menu > li { width: 33.333%; }
+.portfolio-menu .child { margin: .5rem 0; }
+.portfolio-menu .grandchild { margin-bottom: .5rem; line-height: 1.3; }
+/* nested lists indent toward the side the text is aligned to */
+.child, .grandchild { padding-inline-start: 2rem; }
+[data-align="right"] .child, [data-align="right"] .grandchild { padding-inline-start: 0; padding-inline-end: 2rem; }
+:root:not([data-align]) .child, :root:not([data-align]) .grandchild { padding-inline-start: 0; }
+
+/* ---------- about ---------- */
+.about { max-width: 36rem; }
+.about p { margin: 0 0 1rem; }
+.contact { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: var(--justify); }
+
+/* ---------- footer: copyright + controls ---------- */
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem var(--gutter) 1.5rem;
+  font-size: .875rem;
+}
+.controls { display: flex; gap: 1.25rem; }
+
+@media (max-width: 749px) {
+  .portfolio-menu { flex-direction: column; }
+  .portfolio-menu > li { width: auto; }
+}

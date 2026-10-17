@@ -4,46 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grace Saint</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+  <!-- apply saved color/alignment before the page paints -->
+  <script>try{var r=document.documentElement,t=localStorage.getItem('theme'),a=localStorage.getItem('align');if(t)r.dataset.theme=t;if(a)r.dataset.align=a}catch(e){}</script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-    <header>
-      </header>
-      <section class="about">
-        <p>grace saint is a creative technologist with a background in software engineering
-          and apparel design. she received a bachelors in computer science from depauw university and an associates in apparel design from the fashion institute of technology.
-        </p>
-        <p>
-          she has 8 years of professional experience as a salesforce engineer, specializing in sales cloud, service cloud, and experience cloud.
-        </p>
-        <p> 
-          she has 1 year of professional experience as a seamstress, specializing in custom apparel design and production.
-        </p>
-        <p>
-          her interests lie at the intersection of technology, design, and art. she is passionate about designing for both function and beauty.  
-        </p>
-        <p>
-          you can check out her work in apparel and tech below.
-        </p>
-        <p>
-          
-        </p>
-      </section>
-      <section class="about-contact">
-        <div class="contact" id="contact">
-          <a href="mailto:grace.saint8@gmail.com" id="email">email</a>
-          <a href="https://www.linkedin.com/in/grace-saint-bb5297b7/" id="linkedin">linkedin</a>
-          <a href="https://www.instagram.com/grace_saint/" id="instagram">instagram</a>
-        </div>
-      </section>
-      <footer>
-        <p>&copy; 2026 Grace Saint</p>
-      </footer>
-      <script>
-        
-      </script>
+<body class="home">
+  <main>
+    <div class="home-wrapper">
+      <h1 class="logo" role="img" aria-label="Grace Saint"></h1>
+      <nav aria-label="Main">
+        <ul class="home-menu">
+          <li><a href="work.html">Work</a></li>
+          <li><a href="work.html#apparel">Apparel</a></li>
+          <li><a href="work.html#tech">Tech</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="mailto:grace.saint8@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/grace-saint-bb5297b7/">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/grace_saint/">Instagram</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Grace Saint</p>
+    <div class="controls">
+      <button type="button" data-cycle="theme">Color</button>
+      <button type="button" data-cycle="align">Align</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+</html>
