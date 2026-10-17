@@ -112,9 +112,12 @@ main {
 }
 .portfolio-menu > li {
   width: 33.333%;
-  display: flex;
-  flex-direction: column;
-  align-items: var(--justify);
+  display: grid;
+  grid-template-columns: max-content;
+  justify-content: var(--justify);
+  justify-items: start;
+  align-content: start;
+  text-align: left;
 }
 .tree { margin-top: .25rem; text-align: left; }
 .tree li { position: relative; padding-left: 3ch; }
