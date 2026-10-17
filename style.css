@@ -8,7 +8,7 @@
 }
 [data-theme="rust"] { --bg: #494A73; --fg: #737249; }
 [data-theme="rose"] { --bg: #6B2016; --fg: #16616B; }
-[data-theme="sky"]  { --bg: #496473; --fg: #735849; }
+[data-theme="sky"]  { --bg: #735849; --fg: #496473; }
 
 /* ---------- alignment (cycled by the ALIGN button) ---------- */
 [data-align="left"]  { --justify: flex-start; --align: left; }
