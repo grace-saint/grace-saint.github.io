@@ -1,16 +1,20 @@
-/* ---------- color themes (cycled by the COLOR button) ---------- */
+/* ---------- color themes (picked with the swatches in the footer) ---------- */
+/* Each theme is named after a fabric or dye. The swatches are built from
+   OPTIONS.theme in script.js, so add a name there and a rule here to add one. */
+:root, [data-theme="muslin"] { --bg: #f3eee4; --fg: #1d1b18; }
+[data-theme="indigo"] { --bg: #494A73; --fg: #737249; }
+[data-theme="madder"] { --bg: #6B2016; --fg: #16616B; }
+[data-theme="tweed"]  { --bg: #735849; --fg: #496473; }
+
 :root {
-  --bg: #ffffff;
-  --fg: #000000;
   --justify: center;   /* where blocks sit on the page */
   --align: center;     /* how text lines up inside them */
   --gutter: 16px;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
 }
-[data-theme="rust"] { --bg: #494A73; --fg: #737249; }
-[data-theme="rose"] { --bg: #6B2016; --fg: #16616B; }
-[data-theme="sky"]  { --bg: #735849; --fg: #496473; }
 
-/* ---------- alignment (cycled by the ALIGN button) ---------- */
+/* ---------- alignment (cycled by the align button) ---------- */
 [data-align="left"]  { --justify: flex-start; --align: left; }
 [data-align="right"] { --justify: flex-end;   --align: right; }
 
@@ -24,24 +28,20 @@ body {
   flex-direction: column;
   background: var(--bg);
   color: var(--fg);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-family: var(--mono);
+  font-size: .9375rem;
+  line-height: 1.6;
   text-align: var(--align);
   transition: background-color .3s, color .3s;
 }
 a { color: inherit; text-decoration: none; }
-a:hover, a[aria-current="page"] { text-decoration: underline; text-underline-offset: .15rem; }
+a:hover, a:focus-visible, a[aria-current="page"] { text-decoration: underline; text-underline-offset: .2rem; }
 ul { list-style: none; margin: 0; padding: 0; }
 button {
   font: inherit; color: inherit; background: none;
-  border: 0; padding: 0; cursor: pointer; text-transform: uppercase;
+  border: 0; padding: 0; cursor: pointer;
 }
-button:hover { text-decoration: underline; text-underline-offset: .15rem; }
-.visually-hidden {
-  position: absolute; width: 1px; height: 1px; overflow: hidden;
-  clip: rect(0 0 0 0); white-space: nowrap;
-}
+button:hover { text-decoration: underline; text-underline-offset: .2rem; }
 
 /* The logo PNG is used as a mask so it takes on the current theme color. */
 .logo {
@@ -63,20 +63,34 @@ main {
   padding: 2rem var(--gutter);
 }
 
-/* ---------- home: centered logo with a two-column menu ---------- */
+/* ---------- home: apparel | logo | tech, split by stitched seams ---------- */
 .home main { justify-content: center; }
-.home-wrapper { width: min(300px, 100%); }
-.home-wrapper .logo { width: 100%; margin-bottom: 2.5rem; }
-.home-menu {
+.home-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, auto);
-  grid-auto-flow: column;
-  column-gap: 2rem;
-  font-size: 1.25rem;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 64rem;
 }
+.home-center {
+  width: min(360px, 100%);
+  padding: 2.5rem;
+  border-inline: 1px dashed;
+}
+.info-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--justify);
+  gap: .25rem 1.25rem;
+  margin-top: 2rem;
+}
+.side { padding: 1rem 2.5rem; font-size: 1.0625rem; }
+.side-title { display: inline-block; margin-bottom: .5rem; }
+/* centered: each side hugs the logo; left/right: everything follows the setting */
+:root:not([data-align="left"]):not([data-align="right"]) .side.apparel { text-align: right; }
+:root:not([data-align="left"]):not([data-align="right"]) .side.tech { text-align: left; }
 
-/* ---------- inner pages: small logo + breadcrumb ---------- */
+/* ---------- inner pages: small logo + path-style breadcrumb ---------- */
 .site-header {
   display: flex;
   flex-direction: column;
@@ -85,9 +99,8 @@ main {
   padding: 1.5rem var(--gutter) 0;
 }
 .site-header .logo { width: 140px; }
-.breadcrumbs { display: flex; gap: .4rem; }
 
-/* ---------- work: three-column nested menu ---------- */
+/* ---------- work: three columns, each drawn as a file tree ---------- */
 .work main { align-items: stretch; }
 .portfolio-menu {
   display: flex;
@@ -97,17 +110,50 @@ main {
   max-width: 100rem;
   margin: 0 auto;
 }
-.portfolio-menu > li { width: 33.333%; }
-.portfolio-menu .child { margin: .5rem 0; }
-.portfolio-menu .grandchild { margin-bottom: .5rem; line-height: 1.3; }
-/* nested lists indent toward the side the text is aligned to */
-.child, .grandchild { padding-inline-start: 2rem; }
-[data-align="right"] .child, [data-align="right"] .grandchild { padding-inline-start: 0; padding-inline-end: 2rem; }
-:root:not([data-align]) .child, :root:not([data-align]) .grandchild { padding-inline-start: 0; }
+.portfolio-menu > li {
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  align-items: var(--justify);
+}
+.tree { margin-top: .25rem; text-align: left; }
+.tree li { position: relative; padding-left: 3ch; }
+/* ├── and └── branches */
+.tree li::before {
+  content: "";
+  position: absolute;
+  left: .5ch; top: 0;
+  width: 2ch; height: .8em;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  opacity: .55;
+}
+/* │ continuing past an item that has siblings below it */
+.tree li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: .5ch; top: 0; bottom: 0;
+  border-left: 1px solid;
+  opacity: .55;
+}
+
+/* hover preview for work items with a data-preview image */
+.preview {
+  position: fixed;
+  right: var(--gutter);
+  bottom: 5rem;
+  z-index: 20;
+  width: min(320px, 40vw);
+  margin: 0;
+  pointer-events: none;
+}
+.preview img { display: block; width: 100%; height: auto; }
+[data-align="right"] .preview { right: auto; left: var(--gutter); }
+@media (hover: none) { .preview { display: none; } }
 
 /* ---------- about ---------- */
 .about { max-width: 36rem; }
-.about p { margin: 0 0 1rem; }
+.about p { margin: 0 0 1rem; font-family: var(--sans); font-size: 1rem; }
 .contact { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: var(--justify); }
 
 /* ---------- footer: copyright + controls ---------- */
@@ -117,18 +163,44 @@ footer {
   bottom: 0;
   z-index: 10;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: .5rem 1rem;
   padding: 1rem var(--gutter) 1.5rem;
-  font-size: .875rem;
+  font-size: .8125rem;
   background: var(--bg);
   transition: background-color .3s;
 }
 footer p { margin: 0; }
-.controls { display: flex; gap: 1.25rem; }
+.controls { display: flex; align-items: center; gap: 1.25rem; }
+.swatches { display: flex; gap: .5rem; }
+/* each swatch carries its own data-theme, so it shows that theme's two colors */
+.swatch {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bg) 50%, var(--fg) 50%);
+  box-shadow: 0 0 0 1px rgba(127, 127, 127, .5);
+}
+.swatch[aria-pressed="true"] { outline: 1px solid currentColor; outline-offset: 2px; }
+.swatch-name { min-width: 6ch; }
 
 @media (max-width: 749px) {
+  .home-split { grid-template-columns: 1fr 1fr; align-items: start; }
+  .home-center {
+    order: -1;
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 360px;
+    justify-self: var(--justify);
+    padding: 0 0 2rem;
+    margin-bottom: 1rem;
+    border-inline: 0;
+    border-bottom: 1px dashed;
+  }
+  .side { padding: 0 1rem; }
+  .side.apparel { border-right: 1px dashed; }
+
   .portfolio-menu { flex-direction: column; }
   .portfolio-menu > li { width: auto; }
 }

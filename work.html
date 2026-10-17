@@ -6,66 +6,76 @@
   <title>Work — Grace Saint</title>
   <!-- apply saved color/alignment before the page paints -->
   <script>try{var r=document.documentElement,t=localStorage.getItem('theme'),a=localStorage.getItem('align');if(t)r.dataset.theme=t;if(a)r.dataset.align=a}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="work">
   <header class="site-header">
     <a href="index.html" class="logo" aria-label="Grace Saint — home"></a>
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="index.html">Index</a> / <a href="work.html" aria-current="page">Work</a>
+    <nav aria-label="Breadcrumb">
+      <a href="index.html">~</a>/<a href="work.html" aria-current="page">work</a>
     </nav>
   </header>
 
   <main>
-    <!-- Replace each "#" with a link to the project page or file once it exists. -->
+    <!--
+      Replace each "#" with a link to the project page once it exists.
+      To show a photo while a link is hovered, add data-preview with the image path:
+        <a href="#" data-preview="images/work/custom-design.jpg">custom-design</a>
+    -->
     <ul class="portfolio-menu">
-      <li id="apparel"><a href="#apparel">Apparel /</a>
-        <ul class="child">
-          <li><a href="#">Custom Design</a></li>
-          <li><a href="#">Production</a></li>
-          <li><a href="#">FIT Coursework</a>
-            <ul class="grandchild">
-              <li><a href="#">Patternmaking</a></li>
-              <li><a href="#">Draping</a></li>
-              <li><a href="#">Construction</a></li>
+      <li id="apparel"><a href="#apparel">apparel/</a>
+        <ul class="tree">
+          <li><a href="#">custom-design</a></li>
+          <li><a href="#">production</a></li>
+          <li><a href="#">fit-coursework/</a>
+            <ul>
+              <li><a href="#">patternmaking</a></li>
+              <li><a href="#">draping</a></li>
+              <li><a href="#">construction</a></li>
             </ul>
           </li>
         </ul>
       </li>
-      <li id="tech"><a href="#tech">Tech /</a>
-        <ul class="child">
-          <li><a href="#">Salesforce</a>
-            <ul class="grandchild">
-              <li><a href="#">Sales Cloud</a></li>
-              <li><a href="#">Service Cloud</a></li>
-              <li><a href="#">Agentforce</a></li>
-              <li><a href="#">Experience Cloud</a></li>
+      <li id="tech"><a href="#tech">tech/</a>
+        <ul class="tree">
+          <li><a href="#">salesforce/</a>
+            <ul>
+              <li><a href="#">sales-cloud</a></li>
+              <li><a href="#">service-cloud</a></li>
+              <li><a href="#">agentforce</a></li>
+              <li><a href="#">experience-cloud</a></li>
             </ul>
           </li>
-          <li><a href="#">Projects</a></li>
+          <li><a href="#">projects</a></li>
         </ul>
       </li>
-      <li><a href="about.html">Info /</a>
-        <ul class="child">
-          <li><a href="about.html">About</a></li>
-          <li><a href="about.html#contact">Contact</a>
-            <ul class="grandchild">
-              <li><a href="mailto:grace.saint8@gmail.com">Email</a></li>
-              <li><a href="https://www.linkedin.com/in/grace-saint-bb5297b7/">LinkedIn</a></li>
-              <li><a href="https://www.instagram.com/grace_saint/">Instagram</a></li>
+      <li><a href="about.html">info/</a>
+        <ul class="tree">
+          <li><a href="about.html">about</a></li>
+          <li><a href="about.html#contact">contact/</a>
+            <ul>
+              <li><a href="mailto:grace.saint8@gmail.com">email</a></li>
+              <li><a href="https://www.linkedin.com/in/grace-saint-bb5297b7/">linkedin</a></li>
+              <li><a href="https://www.instagram.com/grace_saint/">instagram</a></li>
             </ul>
           </li>
         </ul>
       </li>
     </ul>
+
+    <figure class="preview" data-preview-panel hidden><img alt="" /></figure>
   </main>
 
   <footer>
-    <p>&copy; 2026 Grace Saint</p>
+    <p>&copy; 2026 grace saint</p>
     <div class="controls">
-      <button type="button" data-cycle="theme">Color</button>
-      <button type="button" data-cycle="align">Align</button>
+      <div class="swatches" role="group" aria-label="color" data-swatches></div>
+      <span class="swatch-name" data-swatch-name>muslin</span>
+      <button type="button" data-cycle="align">align: center</button>
     </div>
   </footer>
 

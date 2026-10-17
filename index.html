@@ -6,32 +6,50 @@
   <title>Grace Saint</title>
   <!-- apply saved color/alignment before the page paints -->
   <script>try{var r=document.documentElement,t=localStorage.getItem('theme'),a=localStorage.getItem('align');if(t)r.dataset.theme=t;if(a)r.dataset.align=a}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="home">
   <main>
-    <div class="home-wrapper">
-      <h1 class="logo" role="img" aria-label="Grace Saint"></h1>
-      <nav aria-label="Main">
-        <ul class="home-menu">
-          <li><a href="work.html">Work</a></li>
-          <li><a href="work.html#apparel">Apparel</a></li>
-          <li><a href="work.html#tech">Tech</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="mailto:grace.saint8@gmail.com">Email</a></li>
-          <li><a href="https://www.linkedin.com/in/grace-saint-bb5297b7/">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/grace_saint/">Instagram</a></li>
+    <div class="home-split">
+      <nav class="side apparel" aria-label="Apparel">
+        <a class="side-title" href="work.html#apparel">apparel/</a>
+        <ul>
+          <li><a href="work.html#apparel">custom design</a></li>
+          <li><a href="work.html#apparel">production</a></li>
+          <li><a href="work.html#apparel">fit coursework</a></li>
+        </ul>
+      </nav>
+
+      <div class="home-center">
+        <h1 class="logo" role="img" aria-label="Grace Saint"></h1>
+        <ul class="info-links">
+          <li><a href="about.html">about</a></li>
+          <li><a href="mailto:grace.saint8@gmail.com">email</a></li>
+          <li><a href="https://www.linkedin.com/in/grace-saint-bb5297b7/">linkedin</a></li>
+          <li><a href="https://www.instagram.com/grace_saint/">instagram</a></li>
+        </ul>
+      </div>
+
+      <nav class="side tech" aria-label="Tech">
+        <a class="side-title" href="work.html#tech">tech/</a>
+        <ul>
+          <li><a href="work.html#tech">salesforce</a></li>
+          <li><a href="work.html#tech">projects</a></li>
         </ul>
       </nav>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 Grace Saint</p>
+    <p>&copy; 2026 grace saint</p>
     <div class="controls">
-      <button type="button" data-cycle="theme">Color</button>
-      <button type="button" data-cycle="align">Align</button>
+      <div class="swatches" role="group" aria-label="color" data-swatches></div>
+      <span class="swatch-name" data-swatch-name>muslin</span>
+      <button type="button" data-cycle="align">align: center</button>
     </div>
   </footer>
 

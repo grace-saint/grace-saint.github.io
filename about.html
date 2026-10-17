@@ -6,14 +6,17 @@
   <title>About — Grace Saint</title>
   <!-- apply saved color/alignment before the page paints -->
   <script>try{var r=document.documentElement,t=localStorage.getItem('theme'),a=localStorage.getItem('align');if(t)r.dataset.theme=t;if(a)r.dataset.align=a}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header class="site-header">
     <a href="index.html" class="logo" aria-label="Grace Saint — home"></a>
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="index.html">Index</a> / <a href="about.html" aria-current="page">About</a>
+    <nav aria-label="Breadcrumb">
+      <a href="index.html">~</a>/<a href="about.html" aria-current="page">about</a>
     </nav>
   </header>
 
@@ -43,10 +46,11 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Grace Saint</p>
+    <p>&copy; 2026 grace saint</p>
     <div class="controls">
-      <button type="button" data-cycle="theme">Color</button>
-      <button type="button" data-cycle="align">Align</button>
+      <div class="swatches" role="group" aria-label="color" data-swatches></div>
+      <span class="swatch-name" data-swatch-name>muslin</span>
+      <button type="button" data-cycle="align">align: center</button>
     </div>
   </footer>
 
